@@ -1,0 +1,150 @@
+  .hr{
+    margin-left: 309px;
+    margin-top: 40px;
+    color: #002e5c;
+  }
+ .consulProfesion{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 55px;
+  
+ } 
+ .contenForm{
+    width: 76%;
+ }
+
+  .container__cards {
+    max-width: 1200px;
+    margin: auto;
+    margin-top: 100px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .card1 {
+    width: 300px;
+    margin: 10px;
+    transition: all 300ms;
+  }
+  
+  .card1:hover {
+    width: 350px;
+  }
+  
+  .card1 .cover {
+    width: 100%;
+    height: 250px;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .card1 .cover img {
+    width: 250px;
+    display: block;
+    margin: auto;
+    position: relative;
+    top: 40px;
+    z-index: 1;
+    filter: drop-shadow(5px 5px 4px rgba(0,0,0,0.5));
+    transition: all 400ms;
+  }
+  
+  .card1:hover .cover img {
+    top: 0px;
+    filter: none;
+  }
+  
+  .card1 .img__back {
+    width: 100%;
+    height: 200px;
+    position: absolute;
+    bottom: -80px;
+    left: 0;
+    background-size: cover;
+    border-radius: 20px;
+    transition: all 300ms;
+  }
+  
+  .card1:nth-of-type(1) .img__back {
+    background-image: url(../images/bg1.jpg);
+  }
+  
+  .card1:nth-of-type(2) .img__back {
+    background-image: url(../images/bg2.jpg);
+  }
+  
+  .card1:nth-of-type(3) .img__back {
+    background-image: url(../images/bg3.jpg);
+  }
+  
+  .card1:hover .img__back {
+    bottom: -40px;
+  }
+  
+  .card1 .description {
+    background: #abd0f6;
+    margin-top: -10px;
+    padding: 20px;
+    border-radius: 0px 0px 20px 20px;
+    transition: all 300ms;
+  }
+  
+  .card1:hover .description {
+    padding: 40px;
+  }
+  
+  .card1 .description h2 {
+    margin-top: 10px;
+  }
+  
+  .card1 .description p {
+    margin-top: 10px;
+  }
+  
+  .card1 .description .lulu {
+    padding: 10px 40px;
+    margin-top: 20px;
+    border: none;
+    background: #002e5c;
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: all 300ms;
+  }
+  #buscar{
+    background: #002e5c;
+    color: white;
+    padding: 10px 40px;
+    border: none;
+    border-radius: 8px;
+  }
+  #tipoConsulta{
+    padding: 8px 40px;
+    border-radius: 8px;
+  }
+  
+  .card1 .description .lulu:hover {
+    background: #83277b;
+  }
+  a{
+    padding: 1rem;
+    text-decoration: none;
+    color: #83277b;
+    font-weight: bold;
+    font: 600 16px Arial, sans-serif; /* Tamaño de letra y tipo de fuente */
+    text-transform: uppercase;
+  }
+  a:hover{
+color: #A6359D;
+  }
+
+
+
+
+
+
+
+
+

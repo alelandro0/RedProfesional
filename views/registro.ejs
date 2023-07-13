@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script src="script.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="../public/css/registro.css">
+    <title>Registro</title>
+</head>
+
+
+<body>
+    <section class="contenedorPadre">
+
+    <nav class="navbar">
+        <ul>
+            <li><a class="letraM" href="/interfaz-index">INICIO</a></li>
+            <li><a class="letraM" href="/interfaz-registro-profesional">REGISTRAR PROFESIONAL</a></li>
+            
+        </ul> 
+    </nav>
+        
+        <div class="container-form sign-up">
+            <div class="welcome-back">
+                <div class="message">
+                    <h2>Bienvenido a <span class="multi">MultiServicios</span></h2>
+                    <p>Si ya tienes una cuenta por favor inicia sesion aqui</p>
+                    <button class="sign-up-btn">Iniciar Sesion Como Usuario</button>
+                </div>
+            </div>
+            <form class="formulario" method="post" action="/registro">
+                <h2 class="create-account">Registro <span>Usuario</span></h2>
+                <div class="iconos">
+                    <div class="border-icon">
+                        <i class='bx bxl-instagram'></i>
+                    </div>
+                    <div class="border-icon">
+                        <i class='bx bxl-linkedin' ></i>
+                    </div>
+                    <div class="border-icon">
+                        <i class='bx bxl-facebook-circle' ></i>
+                    </div>
+                </div>
+                <p class="cuenta-gratis">Crea una  <span>cuenta gratis</span></p>
+                <input type="text" placeholder="Nombre" name="nombre">
+                <input type="text" placeholder="Apellido" name="apellido">
+                <input type="email" placeholder="Email" name="correo">  
+                <input type="password" placeholder="Contraseña" name="contrasenia">  
+                <input type="tel" placeholder="Telefono" name="telefono">
+                <div class="check"> <input type="checkbox" id="terminos"required><a id="condiciones" href="/interfaz-terminos-y-condiciones"> Acepta terminos y condiciones</a>
+                </div>
+                <input type="submit" value="Registrarse">
+            </form>
+        </div>
+        <div class="container-form sign-in">
+            <form class="formulario" action="/loginp" method="post">
+                <h2 class="create-account">Iniciar Sesion</h2>
+                <div class="iconos">
+                    <div class="border-icon">
+                        <i class='bx bxl-instagram'></i>
+                    </div>
+                    <div class="border-icon">
+                        <i class='bx bxl-linkedin' ></i>
+                    </div>
+                    <div class="border-icon">
+                        <i class='bx bxl-facebook-circle' ></i>
+                    </div>
+                </div>
+                <p class="cuenta-gratis">¿Aun no tienes una cuenta?</p>
+                <input type="email" placeholder="Email" name="correo">
+                <input type="password" placeholder="Contraseña" name="contrasenia">
+                <input type="submit" value="Iniciar Sesion">
+            </form>
+            <div class="welcome-back">
+                <div class="message">
+                    <h2>Bienvenido  <span> de nuevo</span></h2>
+                    <p>Si aun no tienes una cuenta por favor registrese aqui</p>
+                    <button class="sign-in-btn">Registrarse</button>
+                </div>  
+            </div>
+            </div>
+    </section>
+        
+</body>
+        
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const btnSignIn = document.querySelector('.sign-in-btn');
+            const btnSignUp = document.querySelector('.sign-up-btn');
+            const signUp = document.querySelector('.sign-up');
+            const signIn = document.querySelector('.sign-in');
+    
+            document.addEventListener('click', (e) => {
+                if (e.target === btnSignIn || e.target === btnSignUp) {
+                    signIn.classList.toggle('active');
+                    signUp.classList.toggle('active');
+                }
+            });
+        });
+    </script>
+
+</html>

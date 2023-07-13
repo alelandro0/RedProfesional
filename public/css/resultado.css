@@ -1,0 +1,19 @@
+body{
+    background-image: url("/public/img/alexa-williams-YwBX02K60A4-unsplash.jpg") ;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 1800px;
+    }
+#titulo{
+    margin-top: 20%;
+    margin-left: 15%;
+    text-align: center;
+}
+a{
+    padding: 1rem;
+    margin-top: 10px;
+    text-decoration: none;
+    color:#83277b;
+    font: 600 16px Arial, sans-serif; /* Tamaño de letra y tipo de fuente con grosor personalizado */
+    text-transform: uppercase;
+}

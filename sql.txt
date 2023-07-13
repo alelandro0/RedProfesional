@@ -1,0 +1,31 @@
+create database multiServicios
+use  multiServicios
+create table usuario(
+correo varchar(150) primary key,
+nombres varchar(150),
+apellidos varchar(150),
+contrasenia varchar(200),
+telefono varchar(150)
+);
+
+create table profesional(
+correo varchar(150)  primary key,
+nombres varchar(150),
+apellidos varchar(150),
+profesion varchar(300),
+contrasenia varchar(200)
+);
+ 
+CREATE TABLE client_profesional (
+  fk_cliente VARCHAR(150),
+  fk_profesional VARCHAR(150),
+  CONSTRAINT fk_cliente FOREIGN KEY (fk_cliente) REFERENCES usuario(correo),
+  CONSTRAINT fk_profesional FOREIGN KEY (fk_profesional) REFERENCES profesional(correo),
+  PRIMARY KEY (fk_cliente, fk_profesional)
+);
+insert into profesional values("alesate@jm.com","andres","jaramillo","VETERINARIO","0000");
+insert into profesional values("alersate@jm.com","sandro","jaramillo","MEDICO","0000");
+insert into profesional values("sate@jm.com","ramiro","jaramillo","ALBAÑIL","0000");
+select * from profesional
+select * from usuario
+drop database multiServicios;

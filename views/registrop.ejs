@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="../public/css/registro.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.12/dist/sweetalert2.min.css" />
+    <title>Registro</title>
+</head>
+
+
+<body>
+
+    <section class="contenedorPadre">
+
+        <nav class="navbar">
+            <ul>
+                <li><a class="letraM" href="/interfaz-index">INICIO</a></li>
+                <li><a class="letraM2" href="/interfaz-registro">REGISTRAR USUARIO</a></li>
+
+            </ul>
+        </nav>
+
+        <div class="container-form sign-up">
+            <div class="welcome-back">
+                <div class="message">
+                    <h2>Bienvenido a <span>MultiServicios</span></h2>
+                    <p>Si ya tienes una cuenta por favor inicia sesion aqui</p>
+                    <button class="sign-up-btn">Iniciar Sesion Como Profesional</button>
+                </div>
+            </div>
+            <form class="formulario" method="post" action="/registrop" id="registroForm">
+                <h2 class="create-account">Registro <span>Profesional</span></h2>
+                <div class="iconos">
+                    <div class="border-icon">
+                        <i class='bx bxl-instagram'></i>
+                    </div>
+                    <div class="border-icon">
+                        <i class='bx bxl-linkedin'></i>
+                    </div>
+                    <div class="border-icon">
+                        <i class='bx bxl-facebook-circle'></i>
+                    </div>
+                </div>
+                <p class="cuenta-gratis">Crea una <span>cuenta gratis</span></p>
+                <input type="text" placeholder="Nombre" name="nombre" id="nombre" required>
+                <input type="text" placeholder="Apellidos" name="apellidos" id="apellidos" required>
+                <input type="email" placeholder="Email" name="correo" id="correo" required>
+                <input type="password" placeholder="Contraseña" name="contrasenia" id="contrasenia" required>
+                <input type="text" placeholder="Profesion" name="profesion" id="profesion" required>
+                <div class="check"> <input type="checkbox" id="terminos"required><a id="condiciones" href="/interfaz-terminos-y-condiciones"> Acepta terminos y condiciones</a>
+                </div>
+                <input type="submit" value="Registrarse" id="registroButton">
+            </form>
+        </div>
+        <div class="container-form sign-in">
+            <form class="formulario" method="post" action="/login" id="form">
+                <h2 class="create-account">Iniciar <span> Sesion</span></h2>
+                <div class="iconos">
+                    <div class="border-icon">
+                        <i class='bx bxl-instagram'></i>
+                    </div>
+                    <div class="border-icon">
+                        <i class='bx bxl-linkedin'></i>
+                    </div>
+                    <div class="border-icon">
+                        <i class='bx bxl-facebook-circle'></i>
+                    </div>
+                </div>
+                <p class="cuenta-gratis">¿Aun no tienes una cuenta?</p>
+                <input type="email" placeholder="Email" name="correo">
+                <input type="password" placeholder="Contraseña" name="contrasenia">
+                <input type="submit" value="Iniciar Sesion">
+            </form>
+            <div class="welcome-back">
+                <div class="message">
+                    <h2>Bienvenido <span> de nuevo</span></h2>
+                    <p>Si aun no tienes una cuenta por favor registrese aqui</p>
+                    <button class="sign-in-btn">Registrarse</button>
+                </div>
+            </div>
+        </div>
+    </section>
+  
+    <% if (typeof error !== 'undefined' && error === 'El correo electrónico ya está registrado') { %>
+        <script src="/public/js/error.js"></script>
+        <%} else if (typeof error !== 'undefined' && error === 'solicito caducada') { %>
+            <script src="/public/js/exitoso.js"></script> 
+      <% } %> 
+      
+      <% if (typeof error !== 'undefined' && error === 'Usuario no registrado') { %>
+        <script src="/public/js/noRegis.js"></script> 
+      <% } %>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.12/dist/sweetalert2.min.js"></script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const btnSignIn = document.querySelector('.sign-in-btn');
+        const btnSignUp = document.querySelector('.sign-up-btn');
+        const signUp = document.querySelector('.sign-up');
+        const signIn = document.querySelector('.sign-in');
+
+        document.addEventListener('click', (e) => {
+            if (e.target === btnSignIn || e.target === btnSignUp) {
+                signIn.classList.toggle('active');
+                signUp.classList.toggle('active');
+            }
+        });
+    });
+</script>
+
+</html>

@@ -1,0 +1,40 @@
+#pdfViewer {
+    width: 50%;
+    height: 450px;
+   
+  }
+  body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background:#F2F2F2;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    gap: 10px;
+  }
+  h1{
+    color: black;
+  }
+  .multi{
+    color: rgba(255, 0, 106, 0.898);
+  }
+  ul{
+    list-style: none;
+  }
+  a{
+    text-decoration: none;
+    color: black;
+  }
+  a:hover{
+    color: rgba(255, 0, 106, 0.898);
+  }
+  ul{
+    display: flex;
+    justify-content: space-evenly;
+    width: 90%;
+  }
+  nav{
+    width: 100%;
+  }

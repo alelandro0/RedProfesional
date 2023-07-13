@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil Profesional</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <link rel="stylesheet" type="text/css" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link rel="stylesheet" href="/public/css/perfilUsuario.css">
+    <link rel="stylesheet" href="/public/css2/style.css">
+    <link rel="stylesheet" href="/public/css2/perfil.css">
+    
+
+
+</head>
+
+<body>
+    <section class="perfil-usuario">
+        <div class="contenedor-perfil">
+            <div class="portada-perfil" style="background-image: url('/public/img/fondo.jpg');">
+                <div class="sombra"></div>
+                <div class="avatar-perfil">
+                    <img src="/public/img/daniela.jpg" alt="img" >
+                    <a href="#" class="cambiar-foto">
+                        <i class="fas fa-camera"></i>
+                        <span>Cambiar foto</span>
+                    </a>
+                </div>
+                <div class="datos-perfil">
+                    <% if (typeof nombres !== 'undefined') { %>
+                        <h4 class="titulo-usuario">
+                            <strong><%= nombres %></strong>
+                        </h4>
+                    <% } %>
+                    <p class="bio-usuario">Lorem ipsum dolor sit, amet consectetur adipisicing.</p>
+                    <ul class="lista-perfil">
+                        <li>35 Seguidores</li>
+                        <li>7 Seguidos</li>
+                        <li>32 Publicaciones</li>
+                        <li>
+                            <% if (typeof nombres !== 'undefined') { %>
+                                <a class="nav-link" href="/logout">Salir</a>
+                            <% } %>
+                        </li>
+                    </ul>
+                </div>
+                <div class="opcciones-perfil">
+                    <button type="button" id="botonCambiarPortada">Cambiar portada</button>
+                    <button type=""><i class="fas fa-wrench"></i></button>
+                </div>
+            </div>
+            <div class="menu-perfil">
+                <ul class="menu-opciones">
+                    <li>
+                        <a href="#" title="" onclick="mostrarBloque('opcion1')">
+                            <i class="icono-perfil fas fa-envelope"></i>Mensajeria
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#" title="" onclick="mostrarBloque('opcion2')">
+                            <i class="icono-perfil fas fa-handshake"></i>Servicios
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" title="" onclick="mostrarBloque('opcion3')">
+                            <i class="icono-perfil fas fa-camera"></i>Fotos
+                        </a>
+                    </li>
+                    <li><a href="#" title=""  onclick="mostrarBloque('opcion4')"><i class=" icono-perfil fas fa-grin"></i> Amigos</a></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    
+       
+    <div id="opcion1" class="bloque-elementos">
+        <div class="opciones">
+
+            <section class="body-chat">
+                <div class="seccion-titulo">
+                    <h3>
+                        <i class="fas fa-comments"></i>
+                        Sistema de mensajeria
+                    </h3>
+                </div>
+                <div class="seccion-usuarios">
+                    <div class="seccion-buscar">
+                        <div class="input-buscar">
+                            <input type="search" placeholder="Buscar usuario">
+                            <i class="fas fa-search"></i>
+                        </div>
+                    </div>
+                    <div class="seccion-lista-usuarios">
+                        <div class="usuario">
+                            <div class="avatar">
+                                <img src="/public/img/Mauricio.jpg" alt="img">
+                                <span class="estado-usuario enlinea"></span>
+                            </div>
+                            <div class="cuerpo">
+                                <span> Nombre apellido</span>
+                                <span>detalles de mensaje</span>
+                            </div>
+                            <span class="notificacion">
+                                3
+                            </span>
+                        </div>
+                        <div class="usuario">
+                            <div class="avatar">
+                                <img src="/public/img/Mauricio.jpg" alt="img">
+                                <span class="estado-usuario ocupado"></span>
+                            </div>
+                            <div class="cuerpo">
+                                <span> Nombre apellido</span>
+                                <span>detalles de mensaje</span>
+                            </div>
+                            <span class="notificacion">
+                                1
+                            </span>
+                        </div>
+                        <div class="usuario">
+                            <div class="avatar">
+                                <img src="/public/img/Mauricio.jpg" alt="img">
+                                <span class="estado-usuario desconectado"></span>
+                            </div>
+                            <div class="cuerpo">
+                                <span> Nombre apellido</span>
+                                <span>detalles de mensaje</span>
+                            </div>
+                            <span class="notificacion">
+                                1
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="seccion-chat">
+                    <div class="usuario-seleccionado">
+                        <div class="avatar">
+                            <img src="/public/img/Mauricio.jpg" alt="img">
+                        </div>
+                        <div class="cuerpo">
+                            <span>Nombre de usuario</span>
+                            <span>Activo - Escribiendo...</span>
+                        </div>
+                        <div class="opciones">
+                            <ul>
+                                <li>
+                                    <button type="button"><i class="fas fa-video"></i></button>
+                                </li>
+                                <li>
+                                    <button type="button"><i class="fas fa-phone-alt"></i></button>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="panel-chat">
+                        <div class="mensaje">
+                            <div class="avatar">
+                                <img src="/public/img/Mauricio.jpg" alt="img">
+                            </div>
+                            <div class="cuerpo">
+                                <!-- <img src="http://localhost/multimedia/png/user-foto-3.png" alt=""> -->
+                                <div class="texto">
+                                    Lorem ipsum dolor sit, amet consectetur adipisicing, elit. Dolor eligendi voluptatum
+                                    dolore voluptas iure.
+                                    <span class="tiempo">
+                                        <i class="far fa-clock"></i>
+                                        Hace 5 min
+                                    </span>
+                                </div>
+                                <ul class="opciones-msj">
+                                    <li>
+                                        <button type="button">
+                                            <i class="fas fa-times"></i>
+                                        </button>
+                                    </li>
+                                    <li>
+                                        <button type="button">
+                                            <i class="fas fa-share-square"></i>
+                                        </button>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- derecha -->
+                        <div class="mensaje left">
+                            <div class="cuerpo">
+                                <!-- <img src="http://localhost/multimedia/png/user-foto-3.png" alt=""> -->
+                                <div class="texto">
+                                    Lorem ipsum dolor sit, amet consectetur adipisicing, elit. Dolor eligendi voluptatum
+                                    dolore voluptas iure.
+                                    <span class="tiempo">
+                                        <i class="far fa-clock"></i>
+                                        Hace 6 min
+                                    </span>
+                                </div>
+                                <ul class="opciones-msj">
+                                    <li>
+                                        <button type="button">
+                                            <i class="fas fa-times"></i>
+                                        </button>
+                                    </li>
+                                    <li>
+                                        <button type="button">
+                                            <i class="fas fa-share-square"></i>
+                                        </button>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="avatar">
+                                <img src="/public/img/Mauricio.jpg" alt="img">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel-escritura">
+                        <form class="textarea">
+                            <div class="opcines">
+                                <button type="button">
+                                    <i class="fas fa-file"></i>
+                                    <label for="file"></label>
+                                    <input type="file" id="file">
+                                </button>
+                                <button type="button">
+                                    <i class="far fa-image"></i>
+                                    <label for="img"></label>
+                                    <input type="file" id="img">
+                                </button>
+                            </div>
+                            <textarea placeholder="Escribir mensaje"></textarea>
+                            <button type="button" class="enviar">
+                                <i class="fas fa-paper-plane"></i>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+    <div>
+
+    </div>
+    </div>
+    <div id="opcion2" class="bloque-elementos">
+        <section class="consulProfesion">
+        <div class="contenForm">
+            <form method="POST" action="/consulta">
+                <label for="tipoConsulta"></label>
+                <select name="tipoConsulta" id="tipoConsulta" onchange="this.form.submit()">
+                    <% for (let i = 0; i < profesionales.length; i++) { %>
+                      <% if (profesionSeleccionada === profesionales[i]) { %>
+                        <option value="<%= profesionales[i] %>" selected><%= profesionales[i] %></option>
+                      <% } else { %>
+                        <option value="<%= profesionales[i] %>"><%= profesionales[i] %></option>
+                      <% } %>
+                    <% } %>
+                  </select>
+                  
+                <button type="submit" id="buscar">Consultar Profesion</button>
+            </form>
+            
+           <!-- <a href="#" class="action_btn">Help me</a> -->
+           <% if (profesionalesEncontrados && profesionalesEncontrados.length > 0) { %>
+            <h2 class="hr">Profesionales encontrados:</h2>
+            <div class="container__cards">
+              <% var imageNames = ['abogado.jpg', 'martin.jpg', 'Mauricio.jpg', 'psicologo.jpg']; %>
+              <% for (let i = 0; i < profesionalesEncontrados.length; i++) { %>
+                <div class="card1">
+                    <div class="cover">
+                        <!--  <img src="<%= profesionalesEncontrados[i].imagen %>" alt=""> -->
+                        <% var randomIndex = Math.floor(Math.random() * imageNames.length); %>
+                        <% var randomImage = '/public/img/' + imageNames[randomIndex]; %>
+                        <img src="<%= randomImage %>" alt="">
+                        <div class="img__back"></div>
+                    </div>
+                    <div class="description">
+                        <h2><%= profesionalesEncontrados[i].nombres %></h2>
+                        <h4><%= profesionalesEncontrados[i].profesion %></h4>
+                        <p><%= profesionalesEncontrados[i].descripcion %></p>
+                        <form action="/comprar/<%= profesionalesEncontrados[i].correo %>" method="post">
+                            <button type="submit" class="lulu">Agendar Cita</button>
+                        </form>
+                    </div>
+                </div>
+            <% } %>
+            
+          </div>
+        <% } else if (profesionalesEncontrados) { %>
+            <p>No se encontraron profesionales en esta área.</p>
+        <% } %>
+    </div>
+    </section>
+
+    </div>
+    <div id="opcion3" class="bloque-elementos">
+        <section class="galeri">
+            <div class="elemto-centro"></div>
+            <h1 class="text-galeria"><i class="fas fa-image"></i> Galería de imágenes</h1>
+<!-- HTML -->
+<input type="file" id="inputImagen" accept=".png, .jpeg, .jpg" onchange="agregarImagen(event)" >
+<div class="galeria-imagenes">
+  <div class="galeria" id="galeria" ></div>
+  <div class="lightbox" id="lightbox">
+    <span class="close" onclick="cerrarLightbox()">&times;</span>
+    <img class="lightbox-img" id="lightbox-img">
+  </div>
+</div>
+
+        </section>
+    </div>
+
+    <div id="opcion4" class="bloque-elementos">
+        <section class="amigos">
+            <div class="container text-center py-5">
+                <h3><i class="fas fa-user"></i> Amigos</h3>
+                <div class="contacto-buscar"> <input type="" class="buscar" placeholder="Buscar Contacto"><i
+                        class="fas fa-search"></i>
+                </div>
+
+                <div class="row row-cols-1 row-cols-md-3 g-4 py-5">
+                    <div class="col">
+                        <div class="card">
+                            <img src="/public/img/Mauricio.jpg" class="card-img-top" alt="...">
+                            <span class="estado-usuario enlinea"></span>
+                            <div class="card-body">
+                                <h5 class="card-title">Leanne Graham</h5>
+                                <p class="card-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                                    Blanditiis, neque.</p>
+                            </div>
+                            <div class="d-flex justify-content-evenly p-4">
+                                <i class="bi bi-facebook"></i>
+                                <i class="bi bi-linkedin"></i>
+                                <i class="bi bi-envelope-fill"></i>
+                                <i class="bi bi-whatsapp"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card">
+                            <img src="/public/img/Mauricio.jpg" class="card-img-top" alt="...">
+                            <span class="estado-usuario ocupado"></span>
+                            <div class="card-body">
+                                <h5 class="card-title">Leanne Graham</h5>
+                                <p class="card-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                                    Blanditiis, neque.</p>
+                            </div>
+                            <div class="d-flex justify-content-evenly p-4">
+                                <i class="bi bi-facebook"></i>
+                                <i class="bi bi-linkedin"></i>
+                                <i class="bi bi-envelope-fill"></i>
+                                <i class="bi bi-whatsapp"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card">
+                            <img src="/public/img/Mauricio.jpg" class="card-img-top" alt="...">
+                            <span class="estado-usuario enlinea"></span>
+                            <div class="card-body">
+                                <h5 class="card-title">Leanne Graham</h5>
+                                <p class="card-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                                    Blanditiis, neque.</p>
+                            </div>
+                            <div class="d-flex justify-content-evenly p-4">
+                                <i class="bi bi-facebook"></i>
+                                <i class="bi bi-linkedin"></i>
+                                <i class="bi  bi-envelope-fill"></i>
+                                <i class="bi bi-whatsapp"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+
+<script src="/public/js/validarPdf.js"></script>
+<script src="/public/js/trasicionUsuario.js"></script>
+<script src="/public/js/galeria.js"></script>
+<script src="/public/js/depertamentos.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+crossorigin="anonymous"></script>
+
+
+</html>

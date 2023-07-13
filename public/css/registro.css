@@ -1,0 +1,262 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+/*NAV*/
+
+
+li{
+    list-style: none;
+
+}
+.check{
+    display: flex;
+    width: 83%;
+    margin-left: 43px;
+    margin-top: 20px;
+}
+#terminos{
+    margin: 0;
+    width: 10%;
+}
+#condiciones{
+    width: 90%;
+}
+a{
+    text-decoration: none;
+    color: #fff;
+    font-size: 1rem;
+}
+
+a:hover{
+   color: rgba(0, 68, 255, 0.699);
+}
+
+
+.navbar{
+    width: 53%;
+    height: 100px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    color: #4a4aee;
+}
+
+.navbar .logo a{
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.navbar ul{
+    display: contents;
+   
+}
+
+
+
+
+.navbar .toggle_btn{
+    color: #fff;
+    font-size: 3.5rem;
+    cursor: pointer;
+    display: none;
+}
+
+
+/*Registro*/
+
+.contenedorPadre {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: -webkit-linear-gradient(to right, hsla(0, 0%, 53%, 0.671), hsla(298, 43%, 44%, 0.671));
+    background: linear-gradient(to right, hsla(300, 3%, 62%, 0.114), hsla(241, 42%, 32%, 0.671)), url("/public/img/fondo.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #fff;
+    flex-direction: column;
+}
+.letraM{
+    color: white;
+    font-weight: bold;
+}
+.letraM:hover{
+    color:rgba(255, 0, 106, 0.897) ;
+    text-shadow: 2px 2px 4px rgba(5, 5, 5, 0.5), -2px -2px 4px rgba(0, 0, 0, 0.5);
+}
+.letraM2{
+    font-weight: bold; 
+}
+.letraM2:hover{
+    color:rgba(255, 0, 106, 0.897) ;
+}
+.container-form {
+    width: 58%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition:  all .5s ease-out;
+
+}
+
+.welcome-back {
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+.message {
+    padding: 1rem;
+}
+
+.message h2 {
+    font-size: 1.7rem;
+    padding: 1rem 0;
+}
+
+
+ span{
+    color:rgba(255, 0, 106, 0.897);
+}
+
+
+.message button {
+    padding: 1rem;
+    font-weight: 400;
+    background-color: rgba(255, 0, 106, 0.897);
+    border-radius: 2rem;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: .9rem;
+    margin-top: 2rem;
+    transition: all .3s ease-in;
+    color: #fff;
+}
+
+.message button:hover {
+    background-color:hsla(300, 3%, 62%, 0.671);
+    
+}
+
+.formulario {
+    width: 400px;
+    padding: 1rem;
+    margin: 2rem;
+    background-color: rgba(255, 255, 255, 0.116);
+    text-align: center;
+    border-radius: 25px;
+   
+}
+
+.formulario input::placeholder{
+    color: white;
+    text-align: start;
+}
+.formulario h2 span{
+    color:  rgb(0, 68, 255);
+}
+span{
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(5, 5, 5, 0.5), -2px -2px 4px rgba(0, 0, 0, 0.5);  
+}
+
+.cuenta-gratis span{
+    color:rgba(255, 0, 106, 0.897) ;;
+}
+
+.create-account {
+    padding: 2.7rem 0;
+    font-size: 1.7rem;
+}
+
+.create-account span{
+        color:rgba(255, 0, 106, 0.897) ;
+}
+
+.iconos {
+    width: 200px;
+    display: flex;
+    justify-content: space-around;
+    margin: auto;
+}
+
+.border-icon {
+    height: 20px;
+    width: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+    border: solid thin white;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    transition: all .3s ease-in;
+}
+
+.border-icon:hover {
+    background-color: #4a4aee;
+    cursor: pointer;
+}
+
+.cuenta-gratis {
+    padding: 2rem 0;
+}
+
+.formulario input {
+    width: 70%;
+    display: block;
+    margin: auto;
+    margin-bottom: .1rem;
+    background-color: transparent;
+    border: none;
+    border-bottom: white thin solid;
+    outline: none;
+    padding: .2rem 0;
+    font-size: .9rem;
+    color: white;
+}
+
+.formulario input[type="submit"] {
+    width: 60%;
+    margin: auto;
+    border: solid thin white;
+    padding: .7rem;
+    border-radius: 2rem;
+    background-color: white;
+    font-weight: 600;
+    margin-top: 1.5rem;
+    font-size: .8rem;
+    cursor: pointer;
+    color: rgba(255, 0, 106, 0.897) ;;
+}
+
+.sign-in {
+    position: absolute;
+    opacity: 0;
+    visibility: hidden;
+}   
+
+.sign-in.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.sign-up.active {
+    opacity: 0;
+    visibility: hidden;
+}
+
+
+
+
+
+

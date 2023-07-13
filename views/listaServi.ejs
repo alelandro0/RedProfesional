@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de profesionales</title>
+    <link rel="stylesheet" href="/public/css/listaservi.css">
+</head>
+<body>
+    <nav class="navbar">
+
+        <!-- <div class="logo"><a href="#">MULTI-SERVICES</a></div> -->
+
+        <ul>
+            <li> <% if (nombres) { %>
+                <a class="nav-link" href="#">
+                    <strong><%= nombres %></strong>
+                </a>
+            <% } %></li>
+            <li>    <% if (nombres) { %>
+                <a class="nav-link" href="/logout">Salir</a>
+            <% } %></li>
+            <li><a href="#">CONTACTANOS</a></li>
+        </ul> 
+         <!-- <a href="#" class="action_btn">Help me</a> -->
+    </nav>
+    <div class="container__cards">
+        <% var imageNames = ['abogado.jpg', 'martin.jpg', 'Mauricio.jpg', 'psicologo.jpg']; %>
+        <% for (let i = 0; i < profesional.length; i++) { %>
+            <div class="card">
+                <div class="cover">
+                   <!--  <img src="<%= profesional[i].imagen %>" alt=""> -->
+                   <% var randomIndex = Math.floor(Math.random() * imageNames.length); %>
+                   <% var randomImage = '/public/img/' + imageNames[randomIndex]; %>
+                   <img src="<%= randomImage %>" alt="">
+                    <div class="img__back"></div>
+                </div>
+                <div class="description">
+                    <h2><%= profesional[i].nombres %></h2>
+                    <h4><%= profesional[i].profesion %></h4>
+                  <!--  <p><%= profesional[i].descripcion %></p>-->
+                    <form action="/comprar/<%= profesional[i].correo %>" method="post">
+                        <button type="submit" class="lulu">Agendar Cita</button>
+                    </form>
+                </div>
+            </div>
+        <% } %>
+    
+    </div>
+    
+    
+</body>
+</html>
